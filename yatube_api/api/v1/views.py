@@ -38,7 +38,8 @@ class PostViewSet(viewsets.ModelViewSet):
 
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    permission_classes = (AuthorPermission,)
+    permission_classes = [
+        permissions.IsAuthenticatedOrReadOnly, AuthorPermission]
     pagination_class = LimitOffsetPagination
 
     def perform_create(self, serializer):
@@ -49,7 +50,8 @@ class CommentViewSet(viewsets.ModelViewSet):
     """Список комментариев."""
 
     serializer_class = CommentSerializer
-    permission_classes = (AuthorPermission,)
+    permission_classes = [
+        permissions.IsAuthenticatedOrReadOnly, AuthorPermission]
 
     def perform_create(self, serializer):
         post = get_object_or_404(Post, id=self.kwargs.get('post_id'))
