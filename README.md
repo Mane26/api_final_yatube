@@ -1,4 +1,4 @@
-[# Проект «API для Yatube». Python-разработчик (бекенд) (Яндекс.Практикум)](https://github.com/Mane26/api_final_yatube.git)
+[# Проект «API для Yatube». Python-разработчик (бекенд) ](https://github.com/Mane26/api_final_yatube.git)
 
 ### Описание
 
